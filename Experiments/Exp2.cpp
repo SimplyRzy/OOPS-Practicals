@@ -1,29 +1,34 @@
 #include <iostream.h>
 #include <conio.h>
-#include <string.h>
 
 class Employee
 {
-private:
-    char name[100];
-    char address[200];
+    char name[50];
+    char address[100];
     int age;
     float salary;
 
 public:
     // Function to set values
-    void setValues(char empName[], char empAddress[], int empAge, float empSalary)
+    void setData()
     {
-        strcpy(name, empName);
-        strcpy(address, empAddress);
-        age = empAge;
-        salary = empSalary;
+        cout << "Enter Name: ";
+        cin.getline(name, 50);
+
+        cout << "Enter Address: ";
+        cin.getline(address, 100);
+
+        cout << "Enter Age: ";
+        cin >> age;
+
+        cout << "Enter Salary: ";
+        cin >> salary;
     }
 
     // Function to display values
-    void displayValues()
+    void displayData()
     {
-        cout << "\n--- Employee Details ---\n";
+        cout << "\nEmployee Details\n";
         cout << "Name : " << name << endl;
         cout << "Address : " << address << endl;
         cout << "Age : " << age << endl;
@@ -35,25 +40,10 @@ void main()
 {
     clrscr();
 
-    Employee emp;
-    char name[100], address[200];
-    int age;
-    float salary;
+    Employee e;
 
-    cout << "Enter Name: ";
-    cin.getline(name, 100);
-
-    cout << "Enter Address: ";
-    cin.getline(address, 200);
-
-    cout << "Enter Age: ";
-    cin >> age;
-
-    cout << "Enter Salary: ";
-    cin >> salary;
-
-    emp.setValues(name, address, age, salary);
-    emp.displayValues();
+    e.setData();
+    e.displayData();
 
     getch();
 }
