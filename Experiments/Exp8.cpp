@@ -16,6 +16,7 @@ public:
 };
 
 int main() {
+    clrscr();
     Base* bptr;
     Derived d;
 
